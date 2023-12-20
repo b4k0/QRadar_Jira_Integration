@@ -13,7 +13,7 @@ endpointURL = sys.argv[2]
 offenseID = sys.argv[3]
 
 # Endpoint of QRadar API Request
-endpoint = "https://{0}/api/siem/offenses?fields=id%2C%20description%2C%20magnitude%2C%20destination_networks&filter=id%20%3D%20'{1}'".format(endpointURL, offenseID)
+endpoint = "https://{0}/api/siem/offenses?fields=id%2C%20description%2C%20magnitude&filter=id%20%3D%20'{1}'".format(endpointURL, offenseID)
 
 # Header of QRadar API Request using QRadar API Token
 header = {'Accept': 'application/json', 'Connection': 'keep-alive', 'SEC': apiToken}
