@@ -19,9 +19,16 @@
     * Test **QRadar** **API** via **Custom Actions**.
   	* Test **Jira** **API** via **Custom Actions**.
   	* Test **QRadar-Jira Script** via **Custom Actions**.
+  	* Test the **integration** after the **QRadar** **Event** **Rule** is fired.
+ 
+## **SOS**
 
-<br>
-<br>
+  * **Jira Personal Access Token** is A **Bearer Token**, check your syntax on API Request **Authorization headers**.
+  * Use **QRadar's Console IP**, **NOT Domain**, on API Request.
+  * On **Custom** **Actions**, any property is a **string**.
+  * Extract **Offense ID** from the **event** **"Offense Created"**, for creating the QRadar API request in order to catch any new offense.
+---
+
 
 ![QRadar Jira Integration](https://github.com/Mpak1996/QRadar_Jira_Integration/assets/51766689/7005d639-7165-4f66-9f2f-efd7e38b9ab9)
 
