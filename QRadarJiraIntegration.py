@@ -29,8 +29,8 @@ jira_endpoint = jira_url
 
 
 # Create a JIRA ticket based on QRadar offense
-def create_jira_ticket(offense):
-    magnitude = str(offense[0]['magnitude'])
+def create_jira_ticket(offense, magnitude):
+    magnitude = str(magnitude)
     description = offense[0]['description']
     # Compose the JIRA ticket payload
     payload = json.dumps({
@@ -67,13 +67,11 @@ def retrieve_qradar_offenses():
     if r.status_code == 200:
         offense = r.json()
         # Extract relevant information from QRadar offense
-        description = offense[0]['description']
-        print(description)
         magnitude = offense[0]['magnitude']
         print(magnitude)
         #Check if magnitude => 5
         if magnitude >= int(magnitude_filter):
-            create_jira_ticket(offense)
+            create_jira_ticket(offense,magnitude)
         else:
             print('Failed to Open QRadar Ticket due to magnitude.')
     else:
