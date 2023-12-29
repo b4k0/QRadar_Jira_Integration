@@ -1,5 +1,6 @@
 # QRadar_Jira_Integration
-![QRadarJira](https://github.com/Mpak1996/QRadar_Jira_Integration/assets/51766689/9027b581-edc0-41cc-b687-8126f7f57f85)
+![QRadarJira](https://github.com/Mpak1996/QRadar_Jira_Integration/assets/51766689/4a5ad030-a2eb-4cf9-a2a0-7965e66d0ace)
+
 
 **Python** **Script** for integrating **IBM** **QRadar** **SIEM** with **Jira** **Ticketing** **System**, in order to **create** **issue**(open ticket) automatically on **Jira** for **offenses** with **magnitude** bigger than a selected score via **Custom** **Actions**!
 
