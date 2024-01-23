@@ -16,7 +16,7 @@ jira_url = sys.argv[1]
 jira_pat = sys.argv[2]
 
 # Variables for QRadar API
-offenseID = re.sub(",", "", str(sys.argv[3]))
+offenseID = sys.argv[3]
 apiToken= sys.argv[4] 
 endpoint = sys.argv[5]
 magnitude_filter = sys.argv[6]
