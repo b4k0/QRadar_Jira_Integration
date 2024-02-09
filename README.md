@@ -17,9 +17,9 @@
 	* Write the **python** **script**.
 * Test the Integration:
   
-    * Test **QRadar** **API** via **Custom Actions**.
+    * Test **QRadar** **API** via **Custom Actions**.  [TestQradarApi.py](https://github.com/Mpak1996/QRadar_Jira_Integration/blob/main/TestQradarApi.py)
   	* Test **Jira** **API** via **Custom Actions**. [TestJiraApi.py](https://github.com/Mpak1996/QRadar_Jira_Integration/blob/main/TestJiraApi.py)
-  	* Test **QRadar-Jira Script** via **Custom Actions**. [TestQradarApi.py](https://github.com/Mpak1996/QRadar_Jira_Integration/blob/main/TestQradarApi.py)
+  	* Test **QRadar-Jira Script** via **Custom Actions**. [QRadarJiraIntegration.py](https://github.com/Mpak1996/QRadar_Jira_Integration/blob/main/QRadarJiraIntegration.py)
   	* Test the **integration** after the **QRadar** **Event** **Rule** is fired. [QRadarJiraIntegration.py](https://github.com/Mpak1996/QRadar_Jira_Integration/blob/main/QRadarJiraIntegration.py)
  
 ## **SOS**
