@@ -14,6 +14,7 @@
   
     * Identify **API** **endpoints** both for **QRadar** and **Jira**.
 	* Select the **attributes** of **QRadar** **API**.
+ 	* Select the **fields** of **Jira** **issue**. 	
 	* Write the **python** **script**.
 * Test the Integration:
   
