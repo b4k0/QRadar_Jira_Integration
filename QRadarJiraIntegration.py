@@ -6,6 +6,7 @@ import sys
 import urllib3
 import json
 import re
+from time import sleep
 
 # Disable Warnings
 urllib3.disable_warnings()
@@ -20,6 +21,7 @@ offenseID = sys.argv[3]
 apiToken= sys.argv[4] 
 endpoint = sys.argv[5]
 magnitude_filter = sys.argv[6]
+seconds = int(sys.argv[7])
 
 # QRadar API URL
 qradar_endpoint = "https://{0}/api/siem/offenses?fields=id%2C%20description%2C%20magnitude&filter=id%20%3D%20'{1}'".format(endpoint, offenseID)
@@ -68,7 +70,7 @@ def retrieve_qradar_offenses():
         offense = r.json()
         # Extract relevant information from QRadar offense
         magnitude = offense[0]['magnitude']
-        print(magnitude)
+        # print(magnitude)
         #Check if magnitude => 5
         if magnitude >= int(magnitude_filter):
             create_jira_ticket(offense,magnitude)
@@ -80,6 +82,8 @@ def retrieve_qradar_offenses():
 
 # Main entry point
 def main():
+    sleep(seconds)
+    print('Sleep mode finished!')
     retrieve_qradar_offenses()
 
 if __name__ == '__main__':
