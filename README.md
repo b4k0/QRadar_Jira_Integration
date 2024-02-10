@@ -32,4 +32,5 @@
 ---
 
 
-![QRadar Jira Integration](https://github.com/Mpak1996/QRadar_Jira_Integration/assets/51766689/b8eed487-23d4-4ed6-af0f-6dff03bc6791)
+
+![QRadar Jira Integration](https://github.com/Mpak1996/QRadar_Jira_Integration/assets/51766689/4f976aa1-37d1-4b22-9546-bc398ff01eef)
