@@ -82,6 +82,7 @@ def retrieve_qradar_offenses():
 
 # Main entry point
 def main():
+    # Add delay in order to retrieve offense at real time
     sleep(seconds)
     print('Sleep mode finished!')
     retrieve_qradar_offenses()
