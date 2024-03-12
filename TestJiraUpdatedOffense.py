@@ -5,7 +5,6 @@ import sys
 import urllib3
 import json
 import re
-from time import sleep
 
 urllib3.disable_warnings()
 
