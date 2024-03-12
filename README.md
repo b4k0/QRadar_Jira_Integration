@@ -2,7 +2,7 @@
 ![QRadarJira](https://github.com/Mpak1996/QRadar_Jira_Integration/assets/51766689/4a5ad030-a2eb-4cf9-a2a0-7965e66d0ace)
 
 
-**Python** **Script** for integrating **IBM** **QRadar** **SIEM** with **Jira** **Ticketing** **System**, in order to **create** **issue**(open ticket) automatically on **Jira** for **offenses** with **magnitude** bigger than a selected score via **Custom** **Actions**!
+**Python** **Script** for integrating **IBM** **QRadar** **SIEM** with **Jira** **Ticketing** **System**, in order to **create** **issue**(open ticket) automatically at **real time** on **Jira**, for **offenses** with **magnitude** bigger than a selected score via **Custom** **Actions**, making **Incident** **Responce** process faster and efficient!
 
 ## Development Process
 
@@ -14,13 +14,14 @@
   
     * Identify **API** **endpoints** both for **QRadar** and **Jira**.
 	* Select the **attributes** of **QRadar** **API**.
+ 	* Select the **fields** of **Jira** **issue**. 	
 	* Write the **python** **script**.
 * Test the Integration:
   
-    * Test **QRadar** **API** via **Custom Actions**.
-  	* Test **Jira** **API** via **Custom Actions**.
-  	* Test **QRadar-Jira Script** via **Custom Actions**.
-  	* Test the **integration** after the **QRadar** **Event** **Rule** is fired.
+    * Test **QRadar** **API** via **Custom Actions**.  [TestQradarApi.py](https://github.com/Mpak1996/QRadar_Jira_Integration/blob/main/TestQradarApi.py)
+  	* Test **Jira** **API** via **Custom Actions**. [TestJiraApi.py](https://github.com/Mpak1996/QRadar_Jira_Integration/blob/main/TestJiraApi.py)
+  	* Test **QRadar-Jira Script** via **Custom Actions**. [QRadarJiraIntegration.py](https://github.com/Mpak1996/QRadar_Jira_Integration/blob/main/QRadarJiraIntegration.py)
+  	* Test the **integration** after the **QRadar** **Event** **Rule** is fired. [QRadarJiraIntegration.py](https://github.com/Mpak1996/QRadar_Jira_Integration/blob/main/QRadarJiraIntegration.py)
  
 ## **SOS**
 
@@ -31,4 +32,6 @@
 ---
 
 
-![QRadar Jira Integration](https://github.com/Mpak1996/QRadar_Jira_Integration/assets/51766689/b8eed487-23d4-4ed6-af0f-6dff03bc6791)
+![QRadar Jira Integration Diagram](https://github.com/Mpak1996/QRadar_Jira_Integration/assets/51766689/b2e21b8c-c4f2-4b24-88ae-e0de4b7781fe)
+
+
