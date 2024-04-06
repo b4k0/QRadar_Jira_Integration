@@ -10,6 +10,8 @@
 * Generate **QRadar** **API** **Key**
 * Create a **QRadar** **Offense** **Rule**, when a **new** **offense** is **generated** then create a **new** **event** **"Offense Created"**
 * Create a **QRadar** **Event** **Rule**, when the **event "Offense Created"** is **generated**, then **run** a **python script** via **Custom Actions** on **QRadar** **Console**.
+* Create a **QRadar** **Offense** **Rule**, when a **offense** **magnitude** has **increased** by **at least 1 unit(s)**, then create a **new** **event** **"Offense Magnitude has increased"**
+* Create a **QRadar** **Event** **Rule**, when the **event "Offense Magnitude has increased"** is **generated**, then **run** a **python script** via **Custom Actions** on **QRadar** **Console**.
 * Python script:
   
     * Identify **API** **endpoints** both for **QRadar** and **Jira**.
@@ -30,6 +32,7 @@
   * Use **QRadar's Console IP**, **NOT Domain**, on API Request.
   * On **Custom** **Actions**, any property is a **string**.
   * Extract **Offense ID** from the **event** **"Offense Created"**, for creating the QRadar API request in order to catch any new offense.
+  * Extract **Offense ID** from the **event** **"Offense Magnitude has increased"**, for creating the QRadar API request in order to catch any offense that its magnitude has been increased.
 ---
 
 
