@@ -19,8 +19,8 @@ apiToken= sys.argv[4]
 qradar_endpoint = sys.argv[5]
 magnitude_filter = sys.argv[6]
 seconds = int(sys.argv[7])
-project = ""
-issuetype = ""
+project = sys.argv[8]
+issuetype = sys.argv[9]
 
 endpoint = "https://{0}/api/siem/offenses?fields=id%2C%20description%2C%20magnitude%2C%20domain_id%2C%20offense_type&filter=id%20%3D%20'{1}'".format(qradar_endpoint, offense)
 
