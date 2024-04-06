@@ -20,9 +20,9 @@
   
     * Test **QRadar** **API** via **Custom Actions**.  [TestQradarApi.py](https://github.com/Mpak1996/QRadar_Jira_Integration/blob/main/TestQradarApi.py)
   	* Test **Jira** **API** via **Custom Actions**. [TestJiraApi.py](https://github.com/Mpak1996/QRadar_Jira_Integration/blob/main/TestJiraApi.py)
-    * Test **Jira** **API** for **Updated Offenses** via **Custom Actions**. [TestJiraUpdatedOffense.py](https://github.com/Mpak1996/QRadar_Jira_Integration/blob/main/TestJiraUpdatedOffense.py)
-  	* Test **QRadar-Jira Script** via **Custom Actions**. [QRadarJiraIntegration.py](https://github.com/Mpak1996/QRadar_Jira_Integration/blob/main/QRadarJiraIntegration.py)
-  	* Test the **integration** after the **QRadar** **Event** **Rule** is fired. [QRadarJiraIntegration.py](https://github.com/Mpak1996/QRadar_Jira_Integration/blob/main/QRadarJiraIntegration.py)
+    * Test **Jira** **API** for **Updated Offenses** via **Custom Actions**. [TestJiraUpdatedOffense.py](https://github.com/Mpak1996/QRadar_Jira_Integration/blob/main/TestJiraUpdatedOffense.py) 
+  	* Test **QRadar-Jira Script** via **Custom Actions**. [QRadarJiraIntegration.py](https://github.com/Mpak1996/QRadar_Jira_Integration/blob/main/QRadarJiraIntegration.py)  [QRadarJiraIncreasedMagnitude.py](https://github.com/Mpak1996/QRadar_Jira_Integration/blob/main/QRadarJiraIncreasedMagnitude.py) 
+  	* Test the **integration** after the **QRadar** **Event** **Rule** is fired. [QRadarJiraIntegration.py](https://github.com/Mpak1996/QRadar_Jira_Integration/blob/main/QRadarJiraIntegration.py)  [QRadarJiraIncreasedMagnitude.py](https://github.com/Mpak1996/QRadar_Jira_Integration/blob/main/QRadarJiraIncreasedMagnitude.py)
  
 ## **SOS**
 
