@@ -17,7 +17,7 @@ jira_url = sys.argv[1]
 jira_pat = sys.argv[2]
 
 # Variables for QRadar API
-offenseID = sys.argv[3]
+offense = sys.argv[3]
 apiToken= sys.argv[4] 
 endpoint = sys.argv[5]
 magnitude_filter = sys.argv[6]
@@ -31,16 +31,20 @@ jira_endpoint = jira_url
 
 
 # Create a JIRA ticket based on QRadar offense
-def create_jira_ticket(offense, magnitude):
-    magnitude = str(magnitude)
-    description = offense[0]['description']
+def create_jira_ticket(magnitude, description, domain_id, offenses_type, offense_source):
+    magnitude_int = int(magnitude)
+    print(magnitude_int)
     # Compose the JIRA ticket payload
     payload = json.dumps({
         'fields': {
-            'project': {'key': 'Project Name'},
-            'summary': 'QRadar Offense:' + ' ' + offenseID,
-            'description': 'QRadar Offense Description:' + ' ' + description + '\n' + 'Magnitude:' + magnitude,
-            'issuetype': {'name': 'Issue Type'} 
+             'project': {'key': 'Project Name'},
+            'summary': 'Security Incident on ' + ' ' + offenses_type + ' ' + offense_source + ' ' + '-' + ' ' + offense,
+            'description': 'QRadar Offense Description: ' + ' ' + description + '\n' + 'Magnitude: ' + ' ' + magnitude + '\n' + 'Domain: ' + ' ' + domain_id + '\n' + 'Offense Type: ' + ' ' + offenses_type + '\n' + 'Offense Source: ' + ' ' + offense_source,
+            'issuetype': {'name': 'Issue Type'},
+            'customfield_19101': offense,
+            'customfield_19103': magnitude_int,
+            'customfield_19302': domain_id,
+            'customfield_18502': { 'value': 'Service Type'}
             }
         })
 
@@ -67,13 +71,40 @@ def retrieve_qradar_offenses():
     
     # Check if the request was successful
     if r.status_code == 200:
-        offense = r.json()
+        offenseJSON = r.json()
+        print(offenseJSON)
+        print(len(offenseJSON))
         # Extract relevant information from QRadar offense
-        magnitude = offense[0]['magnitude']
-        # print(magnitude)
+        print(offenseJSON[0])
+        magnitude = offenseJSON[0]['magnitude']
+        print(magnitude)
         #Check if magnitude => 5
         if magnitude >= int(magnitude_filter):
-            create_jira_ticket(offense,magnitude)
+            magnitude = str(magnitude)
+            description = offenseJSON[0]['description']
+            domain = offenseJSON[0]['domain_id']
+            print("Domain is: " + str(domain))
+            offense_type = offenseJSON[0]['offense_type']
+            print("Type is: " + str(offense_type))
+            offense_source = offenseJSON[0]['offense_source']
+            print("Offense Source is: " + str(offense_source))
+            # Extract Domain from Domain ID
+            endpoint2 = "https://{0}/api/config/domain_management/domains?fields=name&filter=id%3D%20'{1}'".format(qradar_endpoint, domain)
+            r2 = requests.get(endpoint2, headers={'Accept': 'application/json', 'Connection': 'keep-alive', 'SEC': apiToken}, verify=False, timeout=60)
+            print(r2.status_code)
+            if r2.status_code == 200:
+                domainJSON = r2.json()
+                print(domainJSON)
+                domain_id = domainJSON[0]['name']
+            # Extract Offense Type from Offense Type ID
+            endpoint3 = "https://{0}/api/siem/offense_types?fields=name&filter=id%20%3D%20'{1}'".format(qradar_endpoint, offense_type)
+            r3 = requests.get(endpoint3, headers={'Accept': 'application/json', 'Connection': 'keep-alive', 'SEC': apiToken}, verify=False, timeout=60)
+            print(r3.status_code)
+            if r3.status_code == 200:
+                typeJSON = r3.json()
+                print(typeJSON)
+                offenses_type = typeJSON[0]['name']
+            create_jira_ticket(magnitude, description, domain_id, offenses_type, offense_source)
         else:
             print('Failed to Open QRadar Ticket due to magnitude.')
     else:
