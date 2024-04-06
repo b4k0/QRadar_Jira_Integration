@@ -16,7 +16,8 @@
   
     * Identify **API** **endpoints** both for **QRadar** and **Jira**.
 	* Select the **attributes** of **QRadar** **API**.
- 	* Select the **fields** of **Jira** **issue**. 	
+ 	* Select the **fields** of **Jira** **issue**.
+  	* Check for **open tickets** on **Jira** with offenses with **magnitude equal or bigger** from the selected value. 
 	* Write the **python** **script**.
 * Test the Integration:
   
