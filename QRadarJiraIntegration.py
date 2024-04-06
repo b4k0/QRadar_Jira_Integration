@@ -24,7 +24,7 @@ magnitude_filter = sys.argv[6]
 seconds = int(sys.argv[7])
 
 # QRadar API URL
-qradar_endpoint = "https://{0}/api/siem/offenses?fields=id%2C%20description%2C%20magnitude&filter=id%20%3D%20'{1}'".format(endpoint, offenseID)
+qradar_endpoint = "https://{0}/api/siem/offenses?fields=id%2C%20description%2C%20magnitude&filter=id%20%3D%20'{1}'".format(endpoint, offense)
 
 # Jira API URL
 jira_endpoint = jira_url
