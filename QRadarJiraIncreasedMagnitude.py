@@ -130,6 +130,7 @@ def retrieve_qradar_offenses():
                     payload2 = json.dumps({
                             'fields': {
                                 'customfield_19103': magnitude
+                                'labels':["Magnitude-Updated"]
                                 }
                             })
                         # Send a PUT request to update the JIRA ticket
