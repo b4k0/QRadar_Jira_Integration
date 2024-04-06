@@ -19,7 +19,8 @@ apiToken= sys.argv[4]
 qradar_endpoint = sys.argv[5]
 magnitude_filter = sys.argv[6]
 seconds = int(sys.argv[7])
-
+project = ""
+issuetype = ""
 
 endpoint = "https://{0}/api/siem/offenses?fields=id%2C%20description%2C%20magnitude%2C%20domain_id%2C%20offense_type&filter=id%20%3D%20'{1}'".format(qradar_endpoint, offense)
 
@@ -80,7 +81,7 @@ def retrieve_qradar_offenses():
         print(magnitude)
         #Check if magnitude > 5
         if magnitude >= int(magnitude_filter):
-            jira_url_2 =  "{0}/rest/api/2/search?jql=project%20%3D%20{2}%20%26%20issuetype%20%3D%20{3}%20%26%20'Alert Link'%20%7E%20{1}&fields=project%2C%20issuetype%2C%20customfield_19101%2C%20customfield_19103".format(jira_endpoint, offense, project, issue_type)
+            jira_url_2 =  "{0}/rest/api/2/search?jql=project%20%3D%20{2}%20%26%20issuetype%20%3D%20{3}%20%26%20'Alert Link'%20%7E%20{1}&fields=project%2C%20issuetype%2C%20customfield_19101%2C%20customfield_19103".format(jira_endpoint, offense, project, issuetype)
             rJira = requests.get(jira_url_2, headers={'Accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Authorization': 'Bearer  {}'.format(jira_pat)}, timeout=60, verify=False)
             print(rJira.status_code)
             print(rJira.elapsed.total_seconds())
