@@ -36,8 +36,8 @@
   * Extract **Offense ID** from the **event** **"Offense Magnitude has increased"**, for creating the QRadar API request in order to catch any offense that its magnitude has been increased.
 ---
 
-![QRadar Jira](https://github.com/Mpak1996/QRadar_Jira_Integration/assets/51766689/6502c5d4-9617-4dbc-a305-a65f54d89196)
 
+![QRadar Jira](https://github.com/b4k0/QRadar_Jira_Integration/assets/51766689/4c79ff3a-792a-4d4b-8910-3fc003c7f4da)
 
 
 
